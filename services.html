@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services – Monde Servais Virgile</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    .services-grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .service-card-lg {
+      background:var(--bg2); border:1px solid var(--border);
+      border-radius:var(--radius-lg); padding:30px;
+      transition:var(--transition); position:relative; overflow:hidden;
+    }
+    .service-card-lg:hover { border-color:var(--border2); transform:translateY(-4px); background:var(--bg3); }
+    .service-card-lg::after {
+      content:attr(data-num);
+      position:absolute; bottom:16px; right:20px;
+      font-family:'Epilogue',sans-serif; font-weight:900;
+      font-size:3.5rem; color:rgba(255,255,255,.04); line-height:1;
+      pointer-events:none;
+    }
+    .sc-icon {
+      width:52px; height:52px; border-radius:12px;
+      background:rgba(255,255,255,.04); border:1px solid var(--border);
+      display:flex; align-items:center; justify-content:center;
+      font-size:22px; margin-bottom:20px; transition:var(--transition);
+    }
+    .service-card-lg:hover .sc-icon { background:rgba(255,94,58,.1); border-color:rgba(255,94,58,.2); }
+    .sc-title { font-family:'Epilogue',sans-serif; font-weight:700; font-size:15px; color:var(--white); margin-bottom:10px; }
+    .sc-desc { font-size:13px; color:var(--muted); line-height:1.7; }
+
+    .process-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+    .process-step { text-align:center; }
+    .ps-num {
+      width:44px; height:44px; border-radius:50%;
+      background:rgba(255,94,58,.1); border:1px solid rgba(255,94,58,.25);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Epilogue',sans-serif; font-weight:900; font-size:14px;
+      color:var(--orange); margin:0 auto 14px;
+    }
+    .ps-title { font-family:'Epilogue',sans-serif; font-weight:700; font-size:14px; color:var(--white); margin-bottom:8px; }
+    .ps-desc { font-size:12px; color:var(--muted); line-height:1.65; }
+
+    @media(max-width:900px){ .services-grid-3{grid-template-columns:1fr 1fr;} .process-grid{grid-template-columns:1fr 1fr;} }
+    @media(max-width:560px){ .services-grid-3{grid-template-columns:1fr;} .process-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="accueil.html" class="nav-link">Accueil</a>
+    <a href="a_propos.html" class="nav-link">À propos</a>
+    <a href="services.html" class="nav-link active">Services</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <a href="accueil.html" class="nav-logo">
+    <div class="nav-logo-icon">M</div>
+    <span class="nav-logo-text">Monde Servais Virgile</span>
+  </a>
+  <a href="contact.html" class="nav-cta">ME CONTACTER</a>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="accueil.html">Accueil</a>
+  <a href="a_propos.html">À propos</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Hero -->
+<div class="page-hero">
+  <div class="page-tag" data-aos>Ce que je propose</div>
+  <h1 class="page-h1" data-aos data-aos-delay="80">Mes Services</h1>
+  <p class="page-sub" data-aos data-aos-delay="150">Des solutions informatiques complètes pour particuliers et entreprises, livrées avec soin et professionnalisme.</p>
+</div>
+<hr class="sep"/>
+
+<!-- Services grille complète -->
+<div class="section-wrap">
+  <div class="services-grid-3">
+
+    <div class="service-card-lg" data-aos data-aos-delay="50" data-num="01">
+      <div class="sc-icon">🖥️</div>
+      <div class="sc-title">Installation Windows</div>
+      <div class="sc-desc">Windows 10/11 propre, activation, drivers, mises à jour, optimisation système et sécurisation complète du poste.</div>
+    </div>
+
+    <div class="service-card-lg" data-aos data-aos-delay="100" data-num="02">
+      <div class="sc-icon">🐧</div>
+      <div class="sc-title">Installation Linux</div>
+      <div class="sc-desc">Ubuntu, Debian, Fedora, Kali Linux. Dual boot, partitionnement, shell, paquets et personnalisation avancée.</div>
+    </div>
+
+    <div class="service-card-lg" data-aos data-aos-delay="150" data-num="03">
+      <div class="sc-icon">🔩</div>
+      <div class="sc-title">Réparation PC & Laptop</div>
+      <div class="sc-desc">Remplacement disque, RAM, carte mère, écran, clavier. Diagnostic complet et réparation rapide toutes marques.</div>
+    </div>
+
+    <div class="service-card-lg" data-aos data-aos-delay="200" data-num="04">
+      <div class="sc-icon">📡</div>
+      <div class="sc-title">Configuration Réseau</div>
+      <div class="sc-desc">Mise en place LAN/WAN, routeurs, switches Cisco, DHCP, DNS, VPN, partage de ressources et sécurisation réseau.</div>
+    </div>
+
+    <div class="service-card-lg" data-aos data-aos-delay="250" data-num="05">
+      <div class="sc-icon">🛡️</div>
+      <div class="sc-title">Nettoyage Virus</div>
+      <div class="sc-desc">Suppression complète virus, malwares, ransomwares, spywares. Mise en place d'une protection pérenne et robuste.</div>
+    </div>
+
+    <div class="service-card-lg" data-aos data-aos-delay="300" data-num="06">
+      <div class="sc-icon">🗄️</div>
+      <div class="sc-title">Administration Serveur</div>
+      <div class="sc-desc">Windows Server, Active Directory, GPO, gestion des utilisateurs, droits d'accès et sauvegardes automatisées.</div>
+    </div>
+
+    <div class="service-card-lg" data-aos data-aos-delay="350" data-num="07">
+      <div class="sc-icon">🖨️</div>
+      <div class="sc-title">Installation Imprimantes</div>
+      <div class="sc-desc">Configuration imprimantes réseau et locales, installation pilotes, partage en réseau, résolution de problèmes.</div>
+    </div>
+
+    <div class="service-card-lg" data-aos data-aos-delay="400" data-num="08">
+      <div class="sc-icon">🎧</div>
+      <div class="sc-title">Support Technique</div>
+      <div class="sc-desc">Assistance niveaux 1 et 2, télémaintenance, dépannage à distance, formation utilisateur, documentation technique.</div>
+    </div>
+
+    <div class="service-card-lg" data-aos data-aos-delay="450" data-num="09">
+      <div class="sc-icon">☁️</div>
+      <div class="sc-title">Virtualisation</div>
+      <div class="sc-desc">VMware, VirtualBox : création et gestion de machines virtuelles, snapshots, migration de systèmes.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Processus d'intervention -->
+<hr class="sep"/>
+<div class="section-wrap" style="background:var(--bg2);">
+  <div class="section-tag" data-aos>Comment ça se passe</div>
+  <h2 class="section-h2" data-aos data-aos-delay="80">Mon processus d'intervention</h2>
+  <div class="process-grid">
+    <div class="process-step" data-aos data-aos-delay="60">
+      <div class="ps-num">1</div>
+      <div class="ps-title">Contact</div>
+      <div class="ps-desc">Vous me décrivez votre problème. Je réponds sous 24h avec une première analyse.</div>
+    </div>
+    <div class="process-step" data-aos data-aos-delay="120">
+      <div class="ps-num">2</div>
+      <div class="ps-title">Diagnostic</div>
+      <div class="ps-desc">Diagnostic gratuit sur site ou à distance. Identification précise du problème.</div>
+    </div>
+    <div class="process-step" data-aos data-aos-delay="180">
+      <div class="ps-num">3</div>
+      <div class="ps-title">Devis</div>
+      <div class="ps-desc">Devis clair et transparent, sans surprises. Vous validez avant toute intervention.</div>
+    </div>
+    <div class="process-step" data-aos data-aos-delay="240">
+      <div class="ps-num">4</div>
+      <div class="ps-title">Livraison</div>
+      <div class="ps-desc">Intervention rapide et soignée. Suivi post-intervention et conseils personnalisés.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<hr class="sep"/>
+<div class="section-wrap" style="text-align:center;" data-aos>
+  <h2 class="section-h2" style="max-width:520px;margin:0 auto 14px;">Besoin d'un service ?<br>Obtenez un devis gratuit.</h2>
+  <p style="color:var(--muted);margin-bottom:28px;font-size:15px;">Réponse garantie sous 24h · Intervention sur site ou à distance</p>
+  <a href="contact.html" class="btn btn-orange">OBTENIR UN DEVIS GRATUIT <span class="arrow">→</span></a>
+</div>
+
+<footer class="site-footer">
+  <span class="footer-copy">© 2025 Monde Servais Virgile – Technicien IMI</span>
+  <div class="footer-links">
+    <a href="accueil.html" class="nav-link">Accueil</a>
+    <a href="a_propos.html" class="nav-link">À propos</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+</footer>
+<div class="back-top">↑</div>
+<a href="contact.html" class="chat-bubble">💬</a>
+<script src="script.js"></script>
+</body>
+</html>

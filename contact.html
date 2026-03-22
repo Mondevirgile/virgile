@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – Monde Servais Virgile</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    .faq-list { display:flex; flex-direction:column; gap:10px; margin-top:40px; }
+    .faq-item { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+    .faq-q {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:18px 20px; cursor:pointer; font-weight:600; font-size:14px;
+      color:var(--white); gap:12px; transition:background .2s;
+    }
+    .faq-q:hover { background:rgba(255,255,255,.02); }
+    .faq-icon {
+      width:22px; height:22px; border-radius:50%;
+      background:rgba(255,255,255,.06);
+      display:flex; align-items:center; justify-content:center;
+      font-size:14px; flex-shrink:0; transition:transform .25s;
+      color:var(--muted);
+    }
+    .faq-item.open .faq-icon { transform:rotate(45deg); color:var(--orange); }
+    .faq-a {
+      max-height:0; overflow:hidden;
+      transition:max-height .35s ease, padding .2s ease;
+      font-size:13.5px; color:var(--muted); line-height:1.7;
+    }
+    .faq-item.open .faq-a { max-height:200px; padding:0 20px 18px; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="accueil.html" class="nav-link">Accueil</a>
+    <a href="a_propos.html" class="nav-link">À propos</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </div>
+  <a href="accueil.html" class="nav-logo">
+    <div class="nav-logo-icon">M</div>
+    <span class="nav-logo-text">Monde Servais Virgile</span>
+  </a>
+  <a href="contact.html" class="nav-cta">ME CONTACTER</a>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="accueil.html">Accueil</a>
+  <a href="a_propos.html">À propos</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Hero -->
+<div class="page-hero">
+  <div class="page-tag" data-aos>Parlons de votre projet</div>
+  <h1 class="page-h1" data-aos data-aos-delay="80">Me Contacter</h1>
+  <p class="page-sub" data-aos data-aos-delay="150">Un problème informatique ? Un projet ? Je suis disponible. Réponse garantie sous 24h.</p>
+</div>
+<hr class="sep"/>
+
+<!-- Contact grid -->
+<div class="section-wrap">
+  <div class="contact-grid">
+
+    <!-- Infos -->
+    <div data-aos="fade-right">
+      <div class="section-tag" style="margin-bottom:20px;">Coordonnées</div>
+
+      <div class="contact-item">
+  <div class="contact-icon">✉️</div>
+  <div>
+    <div class="contact-lbl">Email</div>
+    <div class="contact-val">
+      <a href="mailto:mondevirgile47@gmail.com">mondevirgile47@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<div class="contact-item">
+  <div class="contact-icon">📞</div>
+  <div>
+    <div class="contact-lbl">Téléphone / WhatsApp</div>
+    <div class="contact-val">
+      <a href="tel:+22901664774511">+229 01 66 47 74 51</a>
+    </div>
+  </div>
+</div>
+
+<div class="contact-item">
+  <div class="contact-icon">📍</div>
+  <div>
+    <div class="contact-lbl">Localisation</div>
+    <div class="contact-val">Bénin · Disponible à distance</div>
+  </div>
+</div>
+
+<div class="contact-item">
+  <div class="contact-icon">🕐</div>
+  <div>
+    <div class="contact-lbl">Disponibilité</div>
+    <div class="contact-val">Lun à Dim, 7/7</div>
+  </div>
+</div>
+
+      <!-- Badge dispo -->
+      <div class="dispo-badge" style="margin-top:20px;">
+        <div class="dispo-dot"></div>
+        Ouvert aux nouvelles missions
+      </div>
+
+      <!-- Réseaux sociaux -->
+      <div style="margin-top:24px;">
+        <p style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Retrouvez-moi sur</p>
+        <div class="social-row">
+          <a href="https://bit.ly/4aQ5pVe" class="social-btn" title="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://rebrand.ly/d4sct9i" class="social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://bit.ly/4rOpnoz" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://bit.ly/4sr3oEQ" class="social-btn" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulaire -->
+    <div data-aos="fade-left" data-aos-delay="120">
+  <div class="form-card">
+    <p style="font-family:'Epilogue',sans-serif;font-weight:800;font-size:1rem;letter-spacing:.03em;color:var(--white);margin-bottom:28px;">ENVOYER UN MESSAGE</p>
+
+    <form id="contact-form" action="https://formspree.io/f/xvzwnjeg" method="POST">
+      <div class="form-row-2">
+        <div class="form-group">
+          <label class="form-label" for="prenom">Prénom</label>
+          <input class="form-input" type="text" id="prenom" name="prenom" placeholder="Votre prénom" required/>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="nom">Nom</label>
+          <input class="form-input" type="text" id="nom" name="nom" placeholder="Votre nom" required/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="email" id="email" name="email" placeholder="votre@email.com" required/>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="sujet">Sujet</label>
+        <input class="form-input" type="text" id="sujet" name="sujet" placeholder="Objet de votre message" required/>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Décrivez votre besoin en détail..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-orange" style="width:100%;justify-content:center;">
+        ENVOYER LE MESSAGE <span class="arrow">→</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<!-- FAQ -->
+<hr class="sep"/>
+<div class="section-wrap" style="background:var(--bg2);">
+  <div class="section-tag" data-aos>Questions fréquentes</div>
+  <h2 class="section-h2" data-aos data-aos-delay="80">FAQ</h2>
+
+  <div class="faq-list">
+    <div class="faq-item" data-aos data-aos-delay="60">
+      <div class="faq-q">
+        <span>Quel est votre délai d'intervention ?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">En général, j'interviens dans les 24 à 48 heures pour les cas urgents. Pour les projets planifiés, contactez-moi pour fixer un rendez-vous adapté à vos disponibilités.</div>
+    </div>
+  <br>
+    <div class="faq-item" data-aos data-aos-delay="100">
+      <div class="faq-q">
+        <span>Proposez-vous un service à distance ?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Oui, je propose des interventions à distance via des outils de télémaintenance pour de nombreux problèmes logiciels, virus, configurations et dépannages système.</div>
+    </div>
+  <br>
+    <div class="faq-item" data-aos data-aos-delay="140">
+      <div class="faq-q">
+        <span>Le devis est-il vraiment gratuit ?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Le diagnostic est payantes. Toute intervention ou analyse effectuée fera l’objet d’une facturation, que vous décidiez ou non de poursuivre avec le service proposé. Mais pour un petit faveur, le devis détaillé et personnalisé, sans engagement, est offert gratuitement.</div>
+</div>
+    </div>
+    <br>
+    <div class="faq-item" data-aos data-aos-delay="180">
+      <div class="faq-q">
+        <span>Intervenez-vous sur les entreprises ?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Oui, je travaille aussi bien avec des particuliers qu'avec des PME. Je peux prendre en charge la gestion complète du parc informatique, les serveurs et l'infrastructure réseau.</div>
+    </div>
+    <br>
+    <div class="faq-item" data-aos data-aos-delay="220">
+      <div class="faq-q">
+        <span>Que se passe-t-il si le problème revient ?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-a">Toutes mes interventions incluent un suivi post-réparation. Si le même problème réapparaît dans les 15 jours suivant l'intervention, je reviens sans frais supplémentaires.</div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span class="footer-copy">© 2025 Monde Servais Virgile – Technicien IMI</span>
+  <div class="footer-links">
+    <a href="accueil.html" class="nav-link">Accueil</a>
+    <a href="a_propos.html" class="nav-link">À propos</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+</footer>
+<div class="back-top">↑</div>
+<a href="contact.html" class="chat-bubble">💬</a>
+<script src="script.js"></script>
+</body>
+</html>

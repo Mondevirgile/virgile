@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>À Propos – MONDE Sèdomon'an Servais Virgile</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
+    .about-img-wrap { position:relative; }
+    .about-img-wrap img {
+      width:100%; height:420px; object-fit:cover;
+      border-radius:var(--radius-lg);
+      border:1px solid var(--border);
+      filter:grayscale(20%);
+    }
+    .img-badge {
+      position:absolute; bottom:-14px; right:-14px;
+      background:var(--orange); color:#fff;
+      padding:14px 20px; border-radius:var(--radius);
+      font-family:'Epilogue',sans-serif; font-weight:900;
+      text-align:center;
+    }
+    .img-badge strong { display:block; font-size:1.8rem; line-height:1; margin-bottom:3px; }
+    .img-badge span   { font-size:10px; letter-spacing:.08em; text-transform:uppercase; opacity:.85; }
+
+    .about-text { font-size:15px; color:var(--muted); line-height:1.75; margin-bottom:20px; }
+
+    .stats-row { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:28px 0; }
+    .s-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:18px; text-align:center; transition:var(--transition); }
+    .s-card:hover { border-color:var(--border2); transform:translateY(-3px); }
+    .s-val { font-family:'Epilogue',sans-serif; font-weight:900; font-size:2rem; color:var(--white); letter-spacing:-.04em; }
+    .s-val span { color:var(--orange); }
+    .s-lbl { font-size:11px; color:var(--muted); margin-top:4px; }
+
+    /* Skills bars */
+    .skills-col { display:flex; flex-direction:column; gap:0; }
+
+    /* Timeline 2-col -->*/
+    .xp-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+
+    @media(max-width:768px){
+      .about-grid{grid-template-columns:1fr;}
+      .stats-row{grid-template-columns:1fr 1fr;}
+      .xp-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="accueil.html" class="nav-link">Accueil</a>
+    <a href="a_propos.html" class="nav-link active">À propos</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <a href="accueil.html" class="nav-logo">
+    <div class="nav-logo-icon">M</div>
+    <span class="nav-logo-text">MONDE Sèdomon'an Servais Virgile</span>
+  </a>
+  <a href="contact.html" class="nav-cta">ME CONTACTER</a>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="accueil.html">Accueil</a>
+  <a href="a_propos.html">À propos</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="page-tag" data-aos>Mon parcours</div>
+  <h1 class="page-h1" data-aos data-aos-delay="80">À propos de moi</h1>
+  <p class="page-sub" data-aos data-aos-delay="150">Technicien passionné, je transforme les problèmes informatiques en solutions claires et durables.</p>
+</div>
+<hr class="sep"/>
+
+<!-- Présentation -->
+<div class="section-wrap">
+  <div class="about-grid">
+    <!-- Image -->
+    <div class="about-img-wrap" data-aos="fade-right">
+      <img src="photo.png" alt="Monde Servais Virgile" width: 35mm;
+            height: 45mm;
+           onerror="this.src='https://placehold.co/450x420/272727/ff5e3a?text=MSV'"/>
+      <div class="img-badge">
+        <strong>5+</strong>
+        <span>ans d'expérience</span>
+      </div>
+    </div>
+
+    <!-- Texte -->
+    <div data-aos="fade-left" data-aos-delay="120">
+      <div class="section-tag" style="margin-bottom:14px;">Qui suis-je</div>
+      <h2 class="section-h2" style="margin-bottom:20px;">MONDE Sèdomon'an Servais Virgile</h2>
+
+      <p class="about-text">Diplômé en Technicien en Installation et Maintenance Informatique (IMI), je suis spécialisé dans l'installation de systèmes d'exploitation, la configuration réseau, la maintenance matérielle et logicielle, ainsi que la cybersécurité.</p>
+      <p class="about-text">Mon objectif est de fournir un service de qualité, rapide et fiable, tout en restant accessible et à l'écoute des besoins de mes clients. Je crois que chaque problème informatique a une solution élégante.</p>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="s-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="s-val"><span class="stat-num" data-target="100" data-suffix="+">0+</span></div>
+          <div class="s-lbl">PC réparés</div>
+        </div>
+        <div class="s-card" data-aos="zoom-in" data-aos-delay="180">
+          <div class="s-val"><span class="stat-num" data-target="95" data-suffix="%">0%</span></div>
+          <div class="s-lbl">Satisfaction</div>
+        </div>
+        <div class="s-card" data-aos="zoom-in" data-aos-delay="260">
+          <div class="s-val"><span class="stat-num" data-target="5" data-suffix="+">0+</span></div>
+          <div class="s-lbl">Années exp.</div>
+        </div>
+      </div>
+
+      <div class="dispo-badge" data-aos data-aos-delay="200">
+        <div class="dispo-dot"></div>
+        Disponible pour de nouvelles missions
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;">
+        <a href="contact.html" class="btn btn-orange">ME CONTACTER <span class="arrow">→</span></a>
+        <a href="services.html" class="btn btn-outline">MES SERVICES <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Compétences -->
+<hr class="sep"/>
+<div class="section-wrap" style="background:var(--bg2);">
+  <div class="section-tag" data-aos>Expertise technique</div>
+  <h2 class="section-h2" data-aos data-aos-delay="80">Mes compétences</h2>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px 60px;" data-aos data-aos-delay="120">
+    <div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header"><span class="skill-bar-name">Installation OS (Windows/Linux)</span><span class="skill-bar-pct">95%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-w="95%"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header"><span class="skill-bar-name">Maintenance Hardware</span><span class="skill-bar-pct">90%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-w="90%"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header"><span class="skill-bar-name">Réseau & Infrastructure</span><span class="skill-bar-pct">85%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-w="85%"></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header"><span class="skill-bar-name">Cybersécurité</span><span class="skill-bar-pct">80%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-w="80%"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header"><span class="skill-bar-name">Active Directory & GPO</span><span class="skill-bar-pct">78%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-w="78%"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header"><span class="skill-bar-name">Support Technique N1/N2</span><span class="skill-bar-pct">92%</span></div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-w="92%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tags techno -->
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;" data-aos data-aos-delay="150">
+    <span style="font-size:12px;color:var(--muted);padding:6px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:30px;transition:var(--transition);">Windows Server</span>
+    <span style="font-size:12px;color:var(--muted);padding:6px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:30px;">Linux Ubuntu/Debian</span>
+    <span style="font-size:12px;color:var(--muted);padding:6px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:30px;">Cisco / Switch</span>
+    <span style="font-size:12px;color:var(--muted);padding:6px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:30px;">Active Directory</span>
+    <span style="font-size:12px;color:var(--muted);padding:6px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:30px;">DHCP / DNS</span>
+    <span style="font-size:12px;color:var(--muted);padding:6px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:30px;">VPN</span>
+    <span style="font-size:12px;color:var(--muted);padding:6px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:30px;">Firewall</span>
+    <span style="font-size:12px;color:var(--muted);padding:6px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:30px;">VMware</span>
+    <span style="font-size:12px;color:var(--muted);padding:6px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:30px;">Git / GitHub</span>
+    <span style="font-size:12px;color:var(--muted);padding:6px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:30px;">Antivirus Pro</span>
+  </div>
+</div>
+
+<!-- Expérience / Formation -->
+<hr class="sep"/>
+<div class="section-wrap">
+  <div class="section-tag" data-aos>Parcours</div>
+  <h2 class="section-h2" data-aos data-aos-delay="80">Formation & Expérience</h2>
+
+  <div class="xp-grid">
+    <!-- Expérience -->
+    <div data-aos="fade-right" data-aos-delay="80">
+      <p style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;">Expérience</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2019 – Présent</div>
+          <div class="timeline-title">Technicien Informatique Freelance</div>
+          <div class="timeline-desc">Installation, maintenance et support technique pour clients particuliers et entreprises. Intervention sur site et à distance.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2017 – 2019</div>
+          <div class="timeline-title">Technicien Informatique Junior</div>
+          <div class="timeline-desc">Assistance technique niveau 1 & 2, gestion du parc informatique, déploiement de postes de travail.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formation -->
+    <div data-aos="fade-left" data-aos-delay="120">
+      <p style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;">Formation</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2017 – 2019</div>
+          <div class="timeline-title">BTS – Technicien IMI</div>
+          <div class="timeline-desc">Installation et Maintenance Informatique. Systèmes d'exploitation, réseaux, sécurité, support utilisateur.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2016 – 2017</div>
+          <div class="timeline-title">Baccalauréat Scientifique</div>
+          <div class="timeline-desc">Mention obtenue. Passion pour l'informatique et les systèmes numériques.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Certifications</div>
+          <div class="timeline-title">Formations Continues</div>
+          <div class="timeline-desc">Cybersécurité, administration Windows Server, configuration Cisco, virtualisation VMware.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<hr class="sep"/>
+<div class="section-wrap" style="text-align:center;" data-aos>
+  <h2 class="section-h2" style="max-width:500px;margin:0 auto 14px;">Prêt à travailler ensemble ?</h2>
+  <p style="color:var(--muted);margin-bottom:28px;">Contactez-moi pour un devis gratuit et personnalisé.</p>
+  <a href="contact.html" class="btn btn-orange">PRENDRE CONTACT <span class="arrow">→</span></a>
+</div>
+
+<footer class="site-footer">
+  <span class="footer-copy">© 2025 MONDE Sèdomon'an Servais Virgile – Technicien IMI</span>
+  <div class="footer-links">
+    <a href="accueil.html" class="nav-link">Accueil</a>
+    <a href="a_propos.html" class="nav-link">À propos</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+</footer>
+<div class="back-top">↑</div>
+<a href="contact.html" class="chat-bubble">💬</a>
+<script src="script.js"></script>
+</body>
+</html>

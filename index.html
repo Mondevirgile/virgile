@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MONDE S. Servais Virgile – Portfolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #1e1e1e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: "DM Sans", sans-serif;
+      overflow: hidden;
+    }
+
+    .loader-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      animation: fadeIn 0.6s ease both;
+    }
+
+    .logo-circle {
+      width: 56px;
+      height: 56px;
+      border: 2.5px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Epilogue", sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: -1px;
+    }
+
+    .logo-name {
+      font-family: "Epilogue", sans-serif;
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: #fff;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .loader-title {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.8rem;
+      color: #9b9b9b;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      animation: fadeIn 0.6s 0.2s ease both;
+    }
+
+    /* Barre */
+    .progress-wrap {
+      width: 300px;
+      animation: fadeIn 0.6s 0.3s ease both;
+    }
+
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #555;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .progress-bar {
+      height: 2px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #ff5e3a;
+      border-radius: 2px;
+      width: 0%;
+      transition: width 0.05s linear;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-out {
+      animation: fadeOutPage 0.7s ease forwards;
+    }
+
+    @keyframes fadeOutPage {
+      to {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loader-wrap" id="loader">
+    <div class="logo-box">
+      <div class="logo-circle">M</a></div>
+      <div class="logo-name">MONDE S. Servais Virgile</div>
+    </div>
+    <div class="loader-title">Technicien IMI · Chargement en cours</div>
+    <div class="progress-wrap">
+      <div class="progress-top">
+        <span>INITIALISATION</span>
+        <span id="pct">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const fill = document.getElementById("fill");
+    const pct = document.getElementById("pct");
+    const loader = document.getElementById("loader");
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += Math.random() * 5 + 1;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
+        pct.textContent = "100%";
+        fill.style.width = "100%";
+        setTimeout(() => {
+          document.body.classList.add("fade-out");
+          setTimeout(() => (window.location.href = "accueil.html"), 700);
+        }, 350);
+      }
+      pct.textContent = Math.floor(progress) + "%";
+      fill.style.width = progress + "%";
+    }, 55);
+  </script>
+</body>
+
+</html>
