@@ -164,6 +164,10 @@
     ENVOYER LE MESSAGE →
   </button>
 
+   <p id="success-message" style="display:none;color:green;margin-top:15px;font-weight:bold;">
+  ✅ Message envoyé avec succès !
+   </p>
+
  </form>
 <!-- FAQ -->
 <hr class="sep"/>
@@ -226,6 +230,40 @@
 </footer>
 <div class="back-top">↑</div>
 <a href="contact.html" class="chat-bubble">💬</a>
+
+<script>
+const form = document.getElementById('contact-form');
+const successMessage = document.getElementById('success-message');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      successMessage.style.display = "block";
+      form.reset();
+
+      // Retour après 3 secondes
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000);
+
+    } else {
+      alert("Erreur lors de l'envoi ❌");
+    }
+  }).catch(() => {
+    alert("Erreur réseau ❌");
+  });
+});
+  
 <script src="script.js"></script>
 </body>
 </html>
