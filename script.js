@@ -102,17 +102,54 @@ document.addEventListener('DOMContentLoaded', () => {
   bars.forEach(b => barObs.observe(b));
 
   /* ── 9. FORMULAIRE ── */
-  const form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const btn = form.querySelector('[type="submit"]');
-      const orig = btn.innerHTML;
-      btn.innerHTML = '✓ MESSAGE ENVOYÉ !';
-      btn.style.background = '#28c840';
-      setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; form.reset(); }, 3200);
-    });
-  }
+  <script>
+const form = document.getElementById('contact-form');
+const successMessage = document.getElementById('success-message');
+const button = document.getElementById('submit-btn');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Animation bouton
+  button.innerHTML = "⏳ Envoi en cours...";
+  button.disabled = true;
+  button.style.opacity = "0.7";
+
+  const data = new FormData(form);
+
+  fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      successMessage.style.display = "block";
+      form.reset();
+
+      // Changer texte bouton
+      button.innerHTML = "✅ Envoyé !";
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000);
+
+    } else {
+      button.innerHTML = "❌ Erreur";
+      alert("Erreur lors de l'envoi");
+      button.disabled = false;
+      button.style.opacity = "1";
+      button.innerHTML = "ENVOYER LE MESSAGE →";
+    }
+  }).catch(() => {
+      button.innerHTML = "❌ Erreur réseau";
+      button.disabled = false;
+      button.style.opacity = "1";
+      button.innerHTML = "ENVOYER LE MESSAGE →";
+  });
+});
+</script>
 
   /* ── 10. FAQ TOGGLE ── */
   document.querySelectorAll('.faq-item').forEach(item => {
