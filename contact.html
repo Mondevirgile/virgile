@@ -125,47 +125,46 @@
     </div>
 
     <!-- Formulaire -->
-    <div data-aos="fade-left" data-aos-delay="120">
-  <div class="form-card">
-    <p style="font-family:'Epilogue',sans-serif;font-weight:800;font-size:1rem;letter-spacing:.03em;color:var(--white);margin-bottom:28px;">ENVOYER UN MESSAGE</p>
+ <form action="https://api.staticforms.xyz/submit" method="POST">
 
-    <form id="contact-form" action="https://formspree.io/f/xvzwnjeg" method="POST">
-      <div class="form-row-2">
-        <div class="form-group">
-          <label class="form-label" for="prenom">Prénom</label>
-          <input class="form-input" type="text" id="prenom" name="prenom" placeholder="Votre prénom" required/>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="nom">Nom</label>
-          <input class="form-input" type="text" id="nom" name="nom" placeholder="Votre nom" required/>
-        </div>
-      </div>
+  <!-- Clé Staticforms -->
+  <input type="hidden" name="accessKey" value="sf_6ea1dd35bf86ec52e70bf701">
 
-      <div class="form-group">
-        <label class="form-label" for="email">Email</label>
-        <input class="form-input" type="email" id="email" name="email" placeholder="votre@email.com" required/>
-      </div>
+  <!-- Anti-spam -->
+  <input type="text" name="honeypot" style="display:none">
 
-      <div class="form-group">
-        <label class="form-label" for="sujet">Sujet</label>
-        <input class="form-input" type="text" id="sujet" name="sujet" placeholder="Objet de votre message" required/>
-      </div>
+  <div class="form-row-2">
+    <div class="form-group">
+      <label class="form-label">Prénom</label>
+      <input class="form-input" type="text" name="prenom" required>
+    </div>
 
-      <div class="form-group">
-        <label class="form-label" for="message">Message</label>
-        <textarea class="form-textarea" id="message" name="message" placeholder="Décrivez votre besoin en détail..." required></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-orange" style="width:100%;justify-content:center;">
-        ENVOYER LE MESSAGE <span class="arrow">→</span>
-      </button>
-    </form>
+    <div class="form-group">
+      <label class="form-label">Nom</label>
+      <input class="form-input" type="text" name="nom" required>
+    </div>
   </div>
-</div>
 
+  <div class="form-group">
+    <label class="form-label">Email</label>
+    <input class="form-input" type="email" name="email" required>
   </div>
-</div>
 
+  <div class="form-group">
+    <label class="form-label">Sujet</label>
+    <input class="form-input" type="text" name="sujet" required>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Message</label>
+    <textarea class="form-textarea" name="message" required></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-orange" style="width:100%">
+    ENVOYER LE MESSAGE →
+  </button>
+
+ </form>
 <!-- FAQ -->
 <hr class="sep"/>
 <div class="section-wrap" style="background:var(--bg2);">
