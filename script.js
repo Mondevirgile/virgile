@@ -102,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
   bars.forEach(b => barObs.observe(b));
 
   /* ── 9. FORMULAIRE ── */
-  <script>
 const form = document.getElementById('contact-form');
 const successMessage = document.getElementById('success-message');
 const button = document.getElementById('submit-btn');
@@ -149,7 +148,6 @@ form.addEventListener('submit', function(e) {
       button.innerHTML = "ENVOYER LE MESSAGE →";
   });
 });
-</script>
 
   /* ── 10. FAQ TOGGLE ── */
   document.querySelectorAll('.faq-item').forEach(item => {
